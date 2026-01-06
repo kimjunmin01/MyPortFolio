@@ -5,12 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>김준민 | Web Portfolio</title>
   <link rel="stylesheet" href="./styles.css" />
+
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
 </head>
 
 <body>
   <!-- Topbar -->
   <header class="topbar">
-    <a class="brand" href="#top">OOO</a>
+    <a class="brand" href="#top">포토폴리오</a>
 
     <nav class="nav" id="nav">
       <a href="#about">소개</a>
@@ -30,7 +33,7 @@
   <main id="top">
     <section class="container hero">
       <div class="hero-left">
-        <p class="badge">Web / Backend / AI (원하는 트랙으로 수정)</p>
+        <p class="badge">Front-end</p>
         <h1 class="title">
           안녕하세요, <br />
           <span class="accent">김준민</span> 입니다.
@@ -47,6 +50,10 @@
 
         <div class="quick">
           <div class="quick-item">
+            <div class="quick-k">연락처</div>
+            <div class="quick-v">010-9484-5089</div>
+          </div>
+          <div class="quick-item">
             <div class="quick-k">Email</div>
             <div class="quick-v">junmin5089@gmail.com</div>
           </div>
@@ -55,8 +62,8 @@
             <div class="quick-v"><a href="https://github.com/kimjunmin01" target="_blank" rel="noreferrer">github.com/kimjunmin01</a></div>
           </div>
           <div class="quick-item">
-            <div class="quick-k">Blog</div>
-            <div class="quick-v"><a href="https://yourblog.com" target="_blank" rel="noreferrer">yourblog.com</a></div>
+            <div class="quick-k">Instagram</div>
+            <div class="quick-v"><a href="https://yourblog.com" target="_blank" rel="noreferrer">jumini0_0</a></div>
           </div>
         </div>
       </div>
@@ -136,13 +143,12 @@
           <div class="tl-dot"></div>
           <div class="tl-content card">
             <div class="tl-top">
-              <strong>OOO 회사(또는 인턴/경험)</strong>
-              <span class="muted">2024.03 ~ 2024.08</span>
+              <strong>삼성전자</strong>
+              <span class="muted">2024.03 ~ 2025.07</span>
             </div>
             <ul class="list">
+              <li>생산/조립</li>
               <li>비스포크 냉장고 조립</li>
-              <li>업무 내용 2</li>
-              <li>성과/수치(가능하면) 1개</li>
             </ul>
           </div>
         </div>
@@ -157,7 +163,11 @@
             <ul class="list">
               <li>컴퓨터활용능력 1급</li>
               <li>전자기기기능사</li>
-              <li>기타..</li>
+              <li>지게차운전기능사</li>
+              <li>문서실무사 1급</li>
+              <li>CAT 2급</li>
+              <li>GTQ / GTQi A급</li>
+              <li>액셀 / 파워포인트 / 아래한글 A급</li>
             </ul>
           </div>
         </div>
@@ -240,11 +250,11 @@
       <div class="cards" id="projectGrid">
         <article class="card project" data-type="web backend">
           <div class="project-top">
-            <h3>프로젝트 1: 웹페이지(롯데웰푸드) 클론코딩</h3>
+            <h3>프로젝트 1: 웹페이지(롯데웰푸드)</h3>
             <span class="pill">팀</span>
           </div>
           <p class="muted">
-            한 줄 소개: Tailwind css를 사용하여 반응형 웹페이지 구현
+            한 줄 소개: 클론코딩 / Tailwind css를 사용하여 반응형 웹페이지 구현
           </p>
           <ul class="list">
             <li>담당: Header / footer / Floating Banner</li>
@@ -307,23 +317,19 @@
         <div class="card">
           <h3>연락처</h3>
           <div class="contact-list">
-            <div><span class="muted">Email</span> <strong>junmin5089@gmial.com</strong></div>
             <div><span class="muted">Phone</span> <strong>010-9484-5089</strong></div>
+            <div><span class="muted">Email</span> <strong>junmin5089@gmial.com</strong></div>
             <div><span class="muted">GitHub</span> <a href="https://github.com/kimjunmin01" target="_blank" rel="noreferrer"><strong>kimjunmin01</strong></a></div>
-            <div><span class="muted">Blog</span> <a href="https://yourblog.com" target="_blank" rel="noreferrer"><strong>yourblog.com</strong></a></div>
+            <div><span class="muted">Instagram</span> <a href="https://yourblog.com" target="_blank" rel="noreferrer"><strong>jumini0_0</strong></a></div>
           </div>
         </div>
 
         <div class="card">
           <h3>간단 메시지</h3>
           <form id="contactForm" class="form">
-            <input name="name" placeholder="이름" required />
-            <input name="email" placeholder="이메일" type="email" required />
+            <input name="from_name" placeholder="이름" required />
             <textarea name="message" placeholder="메시지" rows="5" required></textarea>
-            <button class="btn primary" type="submit">메시지 미리보기</button>
-            <p class="muted small" id="formHint">
-              * 실제 전송은 아니고, 입력 내용을 화면에 미리보기로 보여줍니다.
-            </p>
+            <button class="btn primary" type="button" onclick="sendMail()">메시지 전달하기</button>
           </form>
         </div>
       </div>

@@ -90,3 +90,36 @@ form.addEventListener("submit", (e) => {
 
 // ===== Footer Year =====
 $("#year").textContent = new Date().getFullYear();
+
+
+
+// email 전송 가능한 객체 가져오기
+(function(){  //모든 html요소가 롣ㅇ이 되면 실행되는 함수
+    emailjs.init("rwAYn5DPBs5KnNQ5B");
+})();
+
+
+
+
+
+
+function sendMail() {
+    let from_name = document.querySelector("input[name='from_name']").value;
+    let name = "김준민";
+    let to_name = "김준민";
+    let email = "junmin5089@gmail.com"
+    let message = document.querySelector("textarea[name='message']").value;
+
+    // parameter(파라미터) 방식으로 변환 
+    // let 변수에 params이름에 Key키 : value값
+    let params = {
+        from_name : from_name,
+        name : name,
+        to_name : to_name,
+        email : email,
+        message : message
+    }
+    console.log(params);
+
+    emailjs.send("service_6m38bfd", "template_eeixlrh", params).then(function(res){alert("이메일 전송이 완료되었습니다!📩")});
+}
